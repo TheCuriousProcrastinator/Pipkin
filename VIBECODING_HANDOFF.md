@@ -37,6 +37,8 @@ Never introduce Chinese, Japanese, Korean, or other CJK text into source code, c
 
 The initial Pipkin conversion passed local validation on the user's Mac before the first GitHub commit.
 
+The production Pipkin icon was also locally validated and embedded through the existing `AppIcon.icns` build pipeline. The source master is `Resources/AppIcon.png` at 1024 x 1024.
+
 Verified:
 
 - Swift tests pass.

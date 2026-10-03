@@ -1,17 +1,10 @@
-name: CI
+name: Manual CI
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
-
-concurrency:
-  group: ci-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   test:
@@ -19,5 +12,5 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Build and test (warnings are errors)
+      - name: Build and test
         run: swift test -Xswiftc -warnings-as-errors

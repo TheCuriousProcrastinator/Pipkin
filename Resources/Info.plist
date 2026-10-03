@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleName</key>
-    <string>MyWindowPip</string>
+    <string>Pipkin</string>
     <key>CFBundleDisplayName</key>
-    <string>MyWindowPip</string>
+    <string>Pipkin</string>
     <key>CFBundleIdentifier</key>
-    <string>com.ljzxzxl.mywindowpip</string>
+    <string>com.thecuriousprocrastinator.Pipkin</string>
     <key>CFBundleExecutable</key>
-    <string>my-window-pip</string>
+    <string>pipkin</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -27,8 +27,8 @@
     <key>NSPrincipalClass</key>
     <string>NSApplication</string>
     <key>NSScreenCaptureUsageDescription</key>
-    <string>MyWindowPip 需要屏幕录制权限，才能把你选中的窗口实时镜像到画中画浮窗。所有画面只在本机内存中流转，不会保存或上传。</string>
+    <string>Pipkin needs Screen Recording permission to mirror the window or screen region you select into a picture-in-picture window. Captured frames stay on this Mac and are not uploaded.</string>
     <key>NSAppleEventsUsageDescription</key>
-    <string>用于识别前台应用与窗口标题，便于选择要画中画的窗口。</string>
+    <string>Pipkin uses application and window information to identify the window you want to show in picture-in-picture.</string>
 </dict>
 </plist>

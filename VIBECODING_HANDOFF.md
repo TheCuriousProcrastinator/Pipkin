@@ -15,7 +15,7 @@ This is a personal utility, not a commercial or App Store product.
 - Default branch: `main`
 - Upstream: `ljzxzxl/my-window-pip`
 - macOS deployment target: 14+
-- Current inherited version: `0.1.7`
+- Current version: `0.1.8`
 
 ## App identity
 
@@ -34,6 +34,8 @@ Pipkin is English-only.
 Never introduce Chinese, Japanese, Korean, or other CJK text into source code, comments, scripts, documentation, diagnostics, build output, or UI.
 
 ## Verified baseline
+
+Release `0.1.8` build `2` was built and validated locally before publication. Swift tests passed, the universal Intel and Apple Silicon app was packaged into verified DMG and ZIP artifacts, and the updater's pre-release 404 behavior was manually validated.
 
 The initial Pipkin conversion passed local validation on the user's Mac before the first GitHub commit.
 
@@ -123,15 +125,24 @@ Normal development must not consume GitHub-hosted runner minutes.
 
 The inherited updater queries GitHub Releases and downloads a DMG plus an optional SHA256 asset.
 
-Important: GitHub's `releases/latest` endpoint returns 404 until Pipkin has its first published GitHub Release. Creating the repository alone does not create a release.
+The live update feed is GitHub's `releases/latest` endpoint. Release `v0.1.8` is the first published Pipkin release. A Pipkin `0.1.8` installation should report that it is up to date.
 
 Known security-hardening item: the inherited updater can continue if a valid SHA256 asset is unavailable.
 
 ## Distribution
 
-No Pipkin release has been published yet.
+Current published release:
 
-Developer ID signing, notarization, and a final Pipkin release process have not been configured.
+- Version: `0.1.8`
+- Build: `2`
+- Tag: `v0.1.8`
+- Release source: GitHub Releases
+- Assets: DMG, DMG SHA256, ZIP, and ZIP SHA256
+- Local ZIP: `/Users/alex/Downloads/Pipkin-0.1.8.zip`
+- Signing state: `code-signed`
+- Apple notarization is not configured for this personal utility.
+- Local Mac validation is authoritative.
+- GitHub Actions are not used for release validation or publication.
 
 ## Architecture
 
@@ -185,11 +196,9 @@ Do not use GitHub as the normal development validation loop.
 
 ## Next task
 
-No code change is currently pending.
+Quick Region Capture remains the next development feature.
 
-Candidate next development task: implement Pipiri-style Quick Region Capture using `fn` plus double-click around the cursor while preserving existing manual region capture.
-
-Inspect the current region-selection, event-tap, hover, and hotkey implementations before designing it.
+An uncommitted local implementation exists separately in the original Pipkin checkout and was intentionally excluded from release `0.1.8`. Continue its local validation before any GitHub write.
 
 ## Prompt for the next ChatGPT session
 

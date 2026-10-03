@@ -39,11 +39,19 @@ enum Updater {
         fetchLatest { result in
             switch result {
             case let .failure(err):
-                showAlert(
-                    style: .warning,
-                    title: ("Update check failed"),
-                    message: describe(err)
-                )
+                if isNoPublishedRelease(err) {
+                    showAlert(
+                        style: .informational,
+                        title: ("No updates available"),
+                        message: ("No Pipkin releases have been published yet.")
+                    )
+                } else {
+                    showAlert(
+                        style: .warning,
+                        title: ("Update check failed"),
+                        message: describe(err)
+                    )
+                }
             case let .success(info):
                 if isNewer(info.version, than: currentVersion) {
                     presentUpdate(info)
@@ -254,6 +262,13 @@ enum Updater {
             guard let http = resp as? HTTPURLResponse else {
                 done(.failure(makeError(("No response")))); return
             }
+            if http.statusCode == 404 {
+                done(.failure(makeError(
+                    "No published Pipkin release yet",
+                    code: 404
+                )))
+                return
+            }
             guard http.statusCode == 200, let data else {
                 done(.failure(makeError("HTTP \(http.statusCode)"))); return
             }
@@ -429,8 +444,13 @@ enum Updater {
         return s
     }
 
-    static func makeError(_ msg: String) -> NSError {
-        NSError(domain: "Updater", code: -1, userInfo: [NSLocalizedDescriptionKey: msg])
+    static func makeError(_ msg: String, code: Int = -1) -> NSError {
+        NSError(domain: "Updater", code: code, userInfo: [NSLocalizedDescriptionKey: msg])
+    }
+
+    static func isNoPublishedRelease(_ error: Error) -> Bool {
+        let ns = error as NSError
+        return ns.domain == "Updater" && ns.code == 404
     }
 
     static func describe(_ error: Error) -> String {

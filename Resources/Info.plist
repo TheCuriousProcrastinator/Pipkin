@@ -2,33 +2,33 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleName</key>
-    <string>Pipkin</string>
-    <key>CFBundleDisplayName</key>
-    <string>Pipkin</string>
-    <key>CFBundleIdentifier</key>
-    <string>com.thecuriousprocrastinator.Pipkin</string>
-    <key>CFBundleExecutable</key>
-    <string>pipkin</string>
-    <key>CFBundlePackageType</key>
-    <string>APPL</string>
-    <key>CFBundleShortVersionString</key>
-    <string>0.1.0</string>
-    <key>CFBundleVersion</key>
-    <string>1</string>
-    <key>CFBundleIconFile</key>
-    <string>AppIcon</string>
-    <key>LSMinimumSystemVersion</key>
-    <string>14.0</string>
-    <key>LSUIElement</key>
-    <true/>
-    <key>NSHighResolutionCapable</key>
-    <true/>
-    <key>NSPrincipalClass</key>
-    <string>NSApplication</string>
-    <key>NSScreenCaptureUsageDescription</key>
-    <string>Pipkin needs Screen Recording permission to mirror the window or screen region you select into a picture-in-picture window. Captured frames stay on this Mac and are not uploaded.</string>
-    <key>NSAppleEventsUsageDescription</key>
-    <string>Pipkin uses application and window information to identify the window you want to show in picture-in-picture.</string>
+	<key>CFBundleDisplayName</key>
+	<string>Pipkin</string>
+	<key>CFBundleExecutable</key>
+	<string>pipkin</string>
+	<key>CFBundleIconFile</key>
+	<string>AppIcon</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.thecuriousprocrastinator.Pipkin</string>
+	<key>CFBundleName</key>
+	<string>Pipkin</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.8</string>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Pipkin uses application and window information to identify the window you want to show in picture-in-picture.</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSScreenCaptureUsageDescription</key>
+	<string>Pipkin needs Screen Recording permission to mirror the window or screen region you select into a picture-in-picture window. Captured frames stay on this Mac and are not uploaded.</string>
 </dict>
 </plist>
